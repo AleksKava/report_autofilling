@@ -13,10 +13,10 @@ After running the RAF program, the program generates a report and saves it to th
 7) The “Conclusion” report template from the Source/Templates folder, into which the program subsequently inserts tables, photographs and other data.
 
 The program consists of the following blocks:
-Download and preprocess source files
+### Download and preprocess source files
 In this block, data is loaded into the program from all tabs of the “Estimate” file. After loading, the data is processed, tables are brought to a common style, empty rows and columns are removed, cells containing zeros are replaced with empty cells, etc.
 
-Create all the necessary functions
+#### Create all the necessary functions
 In this block, functions that will be further used in the program are created.
 The following functions and modules taken from other sources were used:
 - to delete paragraphs  https://stackoverflow.com/questions/29283306/deleting-paragraph-from-cell-in-python-docx
@@ -24,13 +24,11 @@ The following functions and modules taken from other sources were used:
 - to repeat tables headers  https://github.com/python-openxml/python-docx/issues/322 to write the number in words  https://github.com/seriyps/ru_number_to_text
 - to delete paragraphs  https://stackoverflow.com/questions/29283306/deleting-paragraph-from-cell-in-python-docx
 
-Agreement.
-
+##### Agreement
 In this block, the contract data is processed in order to subsequently use the apartment address and contract number for the name of the report and its folder.
 Also in this block, the report template is loaded and pre-processed in accordance with the report type, unnecessary paragraphs are deleted and, if necessary, the expert's signature is inserted.
 
-Styles.
-
+Styles
 In this block, styles are created that will later be used when creating a report.
 
 Thermal imager
