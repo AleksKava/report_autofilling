@@ -1,5 +1,5 @@
 # report_autofilling
-## create word report using python and python-docx
+## Creating word report using python and python-docx
 
 This program was created to automate the filling of reports on construction expertise.
 Data comes into the report from several sources:
