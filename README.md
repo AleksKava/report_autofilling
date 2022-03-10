@@ -13,7 +13,7 @@ After running the RAF program, the program generates a report and saves it to th
 7) The “Conclusion” report template from the Source/Templates folder, into which the program subsequently inserts tables, photographs and other data.
 
 The program consists of the following blocks:
-### Download and preprocess source files
+#### Download and preprocess source files
 In this block, data is loaded into the program from all tabs of the “Estimate” file. After loading, the data is processed, tables are brought to a common style, empty rows and columns are removed, cells containing zeros are replaced with empty cells, etc.
 
 #### Create all the necessary functions
@@ -24,48 +24,48 @@ The following functions and modules taken from other sources were used:
 - to repeat tables headers  https://github.com/python-openxml/python-docx/issues/322 to write the number in words  https://github.com/seriyps/ru_number_to_text
 - to delete paragraphs  https://stackoverflow.com/questions/29283306/deleting-paragraph-from-cell-in-python-docx
 
-##### Agreement
+#### Agreement
 In this block, the contract data is processed in order to subsequently use the apartment address and contract number for the name of the report and its folder.
 Also in this block, the report template is loaded and pre-processed in accordance with the report type, unnecessary paragraphs are deleted and, if necessary, the expert's signature is inserted.
 
-Styles
+#### Styles
 In this block, styles are created that will later be used when creating a report.
 
-Thermal imager
+#### Thermal imager
 In this block, the thermal imaging data is converted from the Dataframe into a Python-docx table and this table is inserted into its place in the report.
 Outside temperature data is taken from the Internet using the Meteostat Python Package https://github.com/meteostat/meteostat-python.
 If thermal imaging control was not carried out, this paragraph is removed from the report.
 
-Defects
+#### Defects
 In this block, the data of the List of Defects is converted from the Dataframe into a Python-docx table and this table is inserted into its place in the report.
 
-The Plan and The Walls
+#### The Plan and The Walls
 In these blocks, the apartment plan and the plan showing the walls to be leveled are loaded into the report.
 
-Вefect statement
+#### Вefect statement
 In this block, the data of the Defective Statement is converted from the Dataframe into a Python-docx table and this table is inserted into its place in the report. When converting, special attention was paid to the width of the columns, depending on the name of the room. This is necessary for optimal placement of the table in the final report.
 
-Сontractors
+#### Сontractors
 In this block, the data of the Contractors is converted from the Dataframe into a Python-docx table and this data is inserted into its place in the report. If there is no need to carry out certain work, then these contractors and their resources are not included in the report and the numbering of other contractors and resources is adjusted accordingly.
 
-Prices
+#### Prices
 In this block, the data of the Prices for the work performed and materials is converted from the Dataframe into a Python-docx table and this table is inserted into its place in the report.
 
-Windows
+#### Windows
 In this block, the windows repair data is converted from the Dataframe into a Python-docx table and this table is inserted into its place in the report.
 
-Ceiling
+#### Ceiling
 In this block, the ceiling repair data is converted from the Dataframe into a Python-docx table and this table is inserted into its place in the report.
 
-Photos
+#### Photos
 In this block, the photos taken by the expert during the inspection of the apartment are loaded into the report. To do this, photos are converted from one common PDF file into several JPG files (one for each page) and then inserted into the report.
 Poppler-21.08.0 was used for the conversion.
 
-Certificates
+#### Certificates
 In this block, certificates for the equipment used are inserted into the report. The report includes only those certificates that were valid at the time of the inspection and only for the equipment that was used during the inspection.
 
-Invoices
+#### Invoices
 In this block, invoices for standard windows are inserted into the report. Invoices are inserted only if it is intended to replace standard windows.
 
-Final edit and save
+#### Final edit and save
 In this block, the final filling of the report with data from the “Estimate” file takes place, the content of the report is updated, and it is saved in Word format with a name containing the contract number. After that, the report is converted to PDF format and the entire set of files is copied to a new folder containing the address and contract number in the name. If you need to make changes to the report, all files from the newly created folder can be copied to any of the “Work” folders, make changes and run the RAF program again.
